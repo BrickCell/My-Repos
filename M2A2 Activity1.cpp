@@ -6,9 +6,9 @@ int main(){
 
     int n,n1,range;
 
-    cout<<"Enter an integer"<<endl;
+    cout<<"Enter an integer: ";
     cin>>n;
-    cout<<"Enter range"<<endl;
+    cout<<"Enter range: ";
     cin>>n1;
 
     for(range = 0; range <=n1; range++ ){
