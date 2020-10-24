@@ -11,7 +11,7 @@ int main(){
     cout<<"Enter range: ";
     cin>>n1;
 
-    for(range = 0; range <=n1; range++ ){
+    for(range = 1; range <=n1; range++ ){
         cout<<n<<" * "<<range<<" = "<<n*range<<endl;
     }
     cout<<"\n\n"<<endl;
