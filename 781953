@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n1,n2, result = 0;
+    char t, Operator;
+
+    do{
+    system("cls");
+    cout<<"Input number 1: ";                     //inputing the first number
+    cin>>n1;
+    cout<<"Input number 2: ";                     //inputing the second number
+    cin>>n2;
+
+    cout<<"..[+]-ADDS..\n..[-]-SUBTRACT..\n..[*]-MULTIPLY..\n..[/]-DIVIDE....";
+
+    cout<<"\n\n\n\n";
+    cout<<"What would you like to find:";                        //operator or operation to do/use
+    cin>>Operator;
+
+    switch(Operator){
+        case '+':
+            cout<<"Addition: ";
+            result = n1 + n2;          //adding two integers using the operator '+'
+            break;
+        case '-':
+            cout<<"Subtraction: ";
+            result = n1 - n2;   //adding two integers using the operator '-'
+            break;
+        case '*':
+            cout<<"Multiplication: ";
+            result = n1 * n2;      //adding two integers using the operator '*'
+            break;
+        case '/':
+            if(n2<=n1){
+                cout<<"Division: ";
+                result = n1 / n2;
+                } //adding two integers using the operator '+'
+            else
+                cout<<"Cannot divided"<<n1<<" by "<<n2<<endl;      //can't be divided
+            break;
+        default:
+            cout<<"invalid input"<<endl;                                 //not in the choices
+            break;
+    }
+    cout<<n1<<Operator<<n2<<" = "<<result<<endl;
+    system("pause");
+        do{
+            cout<<"\n\ndo you want to try again?"<<endl;
+            cout<<"y to try again and n to exit: ";
+            cin>>t;
+            if(t != 'y' && t != 'n')
+                cout<<"\n invalid,you must choose y or n ";
+        }while(t!='y' && t!='n');
+
+    }while(t=='y');
+    return 0;
+}
