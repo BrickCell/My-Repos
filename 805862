@@ -1,0 +1,125 @@
+#include <GL/glut.h> // OpenGL Utility ToolKit Library
+
+void display(); //declare a function
+void reshape(int, int);
+
+int main(int argc,char**argv)
+{
+ glutInit(&argc,argv);
+ glutInitDisplayMode(GLUT_RGB); //sets diplay to rgb
+ glutInitWindowPosition(200,100); //position of the program in your screen
+ glutInitWindowSize(500,500); //size of the program window
+ glutCreateWindow("First Letter"); //window title
+ glutDisplayFunc(display);//call display function
+ glutReshapeFunc(reshape);
+ glutMainLoop(); //loop all functions
+}
+void display()
+{
+ glClear(GL_COLOR_BUFFER_BIT); //Indicates the buffers currently enabled for color
+ glLoadIdentity();//reset all matrix
+
+ //Letter 'B'
+ glBegin(GL_POLYGON);
+ glColor3f(1,0,0);
+ glVertex2f(-8,5);
+ glVertex2f(-6,5);
+ glVertex2f(-6,-5);
+ glVertex2f(-8,-5);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glColor3f(1,1,10);
+ glVertex2f(-6,5);
+ glVertex2f(-2,5);
+ glVertex2f(-2,4);
+ glVertex2f(-6,4);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glVertex2f(-3,4);
+ glVertex2f(-1,4);
+ glVertex2f(-1,0.5);
+ glVertex2f(-3,0.5);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glVertex2f(-6,0.5);
+ glVertex2f(-2,0.5);
+ glVertex2f(-2,-0.5);
+ glVertex2f(-6,-0.5);
+ glEnd();
+
+  glBegin(GL_POLYGON);
+ glVertex2f(-3,-0.5);
+ glVertex2f(-1,-0.5);
+ glVertex2f(-1,-4);
+ glVertex2f(-3,-4);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glVertex2f(-6,-4);
+ glVertex2f(-2,-4);
+ glVertex2f(-2,-5);
+ glVertex2f(-6,-5);
+ glEnd();
+
+
+ //Letter 'D'
+ glBegin(GL_POLYGON);
+ glColor3f(0,0,1);
+ glVertex2f(1,5);
+ glVertex2f(3,5);
+ glVertex2f(3,-5);
+ glVertex2f(1,-5);
+ glEnd();
+ 
+ glBegin(GL_POLYGON);
+ glColor3f(1,1,1);
+ glVertex2f(3,5);
+ glVertex2f(6,5);
+ glVertex2f(6,4);
+ glVertex2f(3,4);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ 
+ glVertex2f(5,4);
+ glVertex2f(7,4);
+ glVertex2f(7,3);
+ glVertex2f(5,3);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glColor3f(1,1,1);
+ glVertex2f(6,3);
+ glVertex2f(8,3);
+ glVertex2f(8,-3);
+ glVertex2f(6,-3);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glVertex2f(5,-3);
+ glVertex2f(7,-3);
+ glVertex2f(7,-4);
+ glVertex2f(5,-4);
+ glEnd();
+
+ glBegin(GL_POLYGON);
+ glColor3f(1,1,1);
+ glVertex2f(3,-5);
+ glVertex2f(6,-5);
+ glVertex2f(6,-4);
+ glVertex2f(3,-4);
+ glEnd();
+
+ glFlush();// force execution of GL commands in finite time
+ }
+void reshape(int w, int h)
+{
+ glViewport(0,0, (GLsizei)w, (GLsizei)h);
+ glMatrixMode(GL_PROJECTION);
+ glLoadIdentity();//reset matrixes
+ gluOrtho2D(-10,10,-10,10);//size of the world
+ glMatrixMode(GL_MODELVIEW);
+} 
